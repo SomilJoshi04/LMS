@@ -1,0 +1,102 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  height: auto;
+  margin-top: 50px;
+}
+
+.cardimg img {
+  height: 190px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cardData-Container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.cardtitle {
+  color: #111827;
+}
+
+.cardtext {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.Teachername {
+  display: flex;
+  gap: 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.cardPrice {
+  display: flex;
+  justify-content: space-between;
+}
+.priceSpan1 {
+  color: #111827;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.priceSpan2 {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.courseCardbtn {
+  border-radius: 5px;
+  border: none;
+  background-color: #10192c;
+  color: white;
+  padding: 8px 4px;
+  font-size: 14px;
+}
+
+.courseCardbtn:hover {
+  background-color: #363648;
+}
+
+
+@media (max-width:600px) {
+
+  .cardContainer{
+    margin-top: 25px;
+  width:300px;
+  }
+
+  .cardimg img {
+    height: 170px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+ .cardContainer{
+    margin-top: 25px;
+    width:300px;
+  }
+
+   .cardimg img {
+    height: 170px;
+  }
+}

@@ -1,0 +1,92 @@
+.addContainer {
+  width: 80%;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f0eaea;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.addContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.addContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.addContainer label {
+  font-weight: 600;
+  color: #111827;
+}
+
+.addContainer input,
+.addContainer textarea {
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.addContainer input:focus,
+.addContainer textarea:focus {
+  border-color: #383839;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(75, 123, 236, 0.2);
+}
+
+.Box {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 12px;
+  gap:12px;
+  background: #f9fafb;
+  border: 1px solid #e4e4e4;
+  margin-bottom: 10px;
+}
+
+button[type="button"] {
+  width: fit-content;
+  padding: 10px 14px;
+  background: #f1f5f9;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button[type="button"]:hover {
+  background: #e2e8f0;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background: #4b7bec;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #3867d6;
+}
+
+
+@media (max-width:600px) {
+
+  #h2{
+    font-size: 6vw;
+  }
+  
+}

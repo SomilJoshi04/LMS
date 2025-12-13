@@ -1,0 +1,112 @@
+import axios from "axios";
+import { handleError } from "../utils";
+import { useState, useEffect } from "react";
+import { FadeLoader } from "react-spinners";
+import "./QuizCard.css";
+import { ToastContainer } from "react-toastify";
+import QuizUI from "./QuizUI";
+import { useNavigate } from "react-router-dom";
+function QuizCard() {
+  const [quizzes, setQuizzes] = useState([]);
+  const [loading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchAllQuizzes = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:4000/quiz/getAllQuizzes"
+        );
+
+        if (response.data.success) {
+          setQuizzes(response.data.quizzes);
+          setIsLoading(false);
+        } else {
+          handleError(response.data.message);
+        }
+      } catch (err) {
+        handleError(err.message);
+      }
+    };
+
+    fetchAllQuizzes();
+  }, []);
+
+  const handleTakeQuiz = async (quiz) => {
+    try {
+      const userId = localStorage.getItem("userId");
+
+      const response = await axios.post(
+        "http://localhost:4000/quiz/checkQuizAccess",
+        {
+          userId: userId,
+          courseId: quiz.CourseId._id,
+        }
+      );
+
+      if (response.data.success) {
+        navigate(`/quiz/${quiz._id}`);
+      } else {
+        handleError(response.data.message);
+      }
+    } catch (err) {
+      console.error(err.message);
+      handleError(err.message);
+    }
+  };
+
+  return (
+    <div className="quizContainer">
+      <h2>Available Quizzes</h2>
+
+      {loading ? (
+        <div className="loader-wrapper">
+          <FadeLoader />
+        </div>
+      ) : (
+        <div className="quizInfo-Container">
+          {quizzes?.map((q) => (
+            <div className="cardContainer" key={q._id}>
+              <div className="cardData-Container">
+                <h3 className="title">Course: {q.CourseId.title}</h3>
+                <h4 className="title">{q.title}</h4>
+                <button
+                  className="courseCardbtn"
+                  onClick={() => handleTakeQuiz(q)}
+                >
+                  Take Quiz
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      <ToastContainer />
+    </div>
+  );
+}
+
+export default QuizCard;
+
+{
+  /* <p className="cardtext">description</p> */
+}
+{
+  /* <div className="Teachername">
+          <span>By teacher</span>
+          <span>duration</span>
+        </div> */
+}
+
+{
+  /* <div className="cardPrice">
+          <span className="priceSpan1">
+            <i className="fa-solid fa-indian-rupee-sign"></i>
+            price
+          </span>
+          <span priceSpan2>
+            <i className="fa-solid fa-circle-user"></i>
+            enrollCount
+          </span>
+        </div> */
+}

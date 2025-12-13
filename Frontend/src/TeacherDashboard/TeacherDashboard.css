@@ -1,0 +1,172 @@
+.teacherDashboard {
+  padding: 18px;
+  /* overflow: hidden; */
+}
+
+.teacherDashboard h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.courseNavbar {
+  margin-top: 40px;
+}
+
+.addCourseContainer h2 {
+  font-size: 30px;
+}
+
+/* My Courses Styling */
+
+.box {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.TeachercourseContainer {
+  display: grid;
+  gap:5vw;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.loader-wrapper {
+  grid-column: 1 / -1;
+}
+
+.TeachercourseContainer p {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  color: #6b7280;
+}
+
+.heading {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* enrolled Student  */
+.enrolledStudent {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Student table styling */
+
+/* 
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+} */
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.students-table th,
+.students-table td {
+  padding: 12px 12px;
+  font-size: 1.7vw;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.students-table thead {
+  color: #333;
+}
+
+.students-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.enrolledStudent div,
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #6b7280;
+}
+
+/* Responsive  */
+
+@media (max-width: 600px) {
+  .TeachercourseContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+   .enrolledStudent h2 {
+    font-size: 20px;
+  }
+
+  .students-table th,
+  .students-table td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+}
+
+@media (min-width: 601px) and (max-width: 900px){
+  .TeachercourseContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+ .enrolledStudent h2 {
+    font-size: 24px;
+  }
+
+  .students-table th,
+  .students-table td {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1280px) {
+  .TeachercourseContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .enrolledStudent h2 {
+    font-size: 30px;
+ 
+ }
+
+ .students-table th,
+  .students-table td {
+    font-size: 2.5vw;
+  }
+
+    .courseNavbar button{
+      font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .courseNavbar {
+    white-space: nowrap;
+  }
+
+.addContainer h2{
+  font-size: 6vw;
+}
+}

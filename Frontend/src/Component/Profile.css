@@ -1,0 +1,257 @@
+/* StudentProfile Styling */
+.studentProfile {
+  margin: 5vw 19vw;
+  position: relative;
+  width: 57.3%;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  padding-bottom: 30px;
+}
+
+.profilediv1 {
+  background-color: #44403c;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  height: 150px;
+  width: 800px;
+}
+
+.profileimg {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.profileimg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.profiletext {
+  position: absolute;
+  top: 83px;
+  margin-left: 170px;
+}
+
+.profiletext {
+  font-weight: lighter;
+  color: #ffff;
+}
+
+.settingWrapper {
+  color: #ffffff;
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  /* position: relative;
+  cursor: pointer; */
+}
+.icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.settingDropdown {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 200px;
+
+  background: #44403c;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  padding: 10px;
+  z-index: 989;
+}
+
+.settingDropdown button {
+  display: flex;
+  align-items: center;
+  width: 160px;
+  margin: 8px 0;
+  padding: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.settingDropdown button:hover {
+  background-color: #707172;
+}
+
+.profileSections {
+  display: flex;
+  align-items: center;
+  padding: 0px 90px;
+  gap: 100px;
+  margin-top: 40px;
+}
+
+#profileInfo1 h2 {
+  display: flex;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin-left: 2px;
+}
+
+#profileInfo1 ul {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#profileInfo1 ul li {
+  color: #707172;
+  font-size: 14px;
+  list-style: none;
+}
+
+/* Teacher Profile Styling */
+.TeacherAbout-1 {
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #707172;
+}
+
+.TeacherAbout-2 ul {
+  padding: 1vw !important;
+  margin-top: 1vw !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* Responsive Styling */
+
+@media (max-width: 600px) {
+  .studentProfile {
+    margin: 7vw 5vw;
+    width: 90vw;
+    overflow-x: hidden;
+  }
+
+  .profilediv1 {
+    width: 100%;
+    height: 120px;
+  }
+
+  .profileimg {
+    top: 70px;
+    left: 15px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .profileimg img {
+    border-radius: 10%;
+  }
+
+  .profiletext {
+    top: 70px;
+    margin-left: 110px;
+    font-size: 14px;
+  }
+
+  .settingWrapper {
+    top: 5px;
+    right: 10px;
+  }
+
+  .profileSections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 0 15px;
+    gap: 30px;
+    margin-top: 12vw;
+  }
+
+  #profileInfo1 h2 {
+    font-size: 16px;
+  }
+
+  #profileInfo1 ul li {
+    font-size: 13px;
+  }
+
+  .settingDropdown {
+    left: -30vw;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 980px) {
+  .studentProfile {
+    margin: 7vw 5vw;
+    width: 90vw;
+    overflow-x: hidden;
+  }
+
+  .settingDropdown {
+    left: -20vw;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1024px) {
+  .studentProfile {
+    margin: 5vw 15vw;
+    width: 76vw;
+    overflow-x: hidden;
+  }
+
+  .settingDropdown {
+    left: -15vw;
+  }
+
+  .profileSections {
+    margin-top: 5vw;
+  }
+  #profileInfo1 h2 {
+    font-size: 1.8vw;
+  }
+
+  #profileInfo1 ul li {
+    font-size: 1.4vw;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px){
+    .studentProfile {
+    margin: 5vw 15vw;
+    width: 62vw;
+    overflow-x: hidden;
+  }
+
+  
+  .settingDropdown {
+    left: -15vw;
+  }
+
+  .profileSections {
+    padding: 3vw;
+  }
+  #profileInfo1 h2 {
+    font-size: 1.8vw;
+  }
+
+  #profileInfo1 ul li {
+    font-size: 1.4vw;
+  }
+}

@@ -1,0 +1,93 @@
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  height: 50vw;
+}
+
+.quizInfo-container {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  /* align-items: center; */
+  justify-content: center;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background-color: #fff;
+  gap: 2vw;
+  width: 32vw;
+  padding: 2vw 1vw;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0px 8px 12px 0px rgba(66, 68, 90, 1);
+}
+
+.totatCount {
+  font-size: 2vw;
+  margin-top: 5vw;
+}
+
+.questions {
+  border: 1px solid #fff;
+  border-radius: 15px;
+  width: 30vw;
+  padding: 3vw 4vw;
+  font-size: 1.9vw;
+  color: #f9f6fd;
+  background-color: #b7a9ff;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  position: relative;
+}
+
+.quiz-btn {
+  width: 25vw;
+  padding: 1vw;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.4vw;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background-color: #dde2e5;
+}
+
+.quiz-btn.selected {
+  border-color: #007bff;
+  background-color: #BFFFF0;
+}
+
+.quiz-btn::before {
+  content: attr(data-option);
+  position: absolute;
+  left: 1vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-container button {
+  width: 6vw;
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-container button:hover {
+  background-color: #dde2e5;
+}

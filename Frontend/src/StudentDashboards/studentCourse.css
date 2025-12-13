@@ -1,0 +1,133 @@
+
+.courseDetails {
+  display: grid;
+    margin-bottom: 5vw;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.courseDetails p {
+  color: #4d5563;
+}
+
+.NoEnroll {
+  display: flex;
+  width: 100vw;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.Icon {
+  font-size: 100px;
+}
+
+.NoEnroll button {
+  border-radius: 5px;
+  width: 10%;
+  padding: 12px;
+  color: #fff;
+  border: none;
+  background-color: #2563eb;
+}
+
+.NoEnroll button:hover {
+  background-color: #113d9c;
+}
+
+/* Responsivness */
+@media (max-width: 600px) {
+  .dashboard-Container {
+      padding: 6vw 8vw;
+    margin: 0px;
+  }
+
+  .progressContainer {
+    padding: 2vw 5vw;
+    width: 90vw;
+  }
+
+    .progressContainer h2{
+      font-size: 7vw;
+    }
+
+  .progress-card {
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 2vw 2vw;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .courseDetails {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 10px;
+  }
+
+  .NoEnroll button {
+    width: 40%;
+    margin-bottom: 10vw;
+  }
+
+  .Icon {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .courseDetails {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-Container {
+   padding: 5vw 1vw;
+    margin: 0px;
+  }
+
+  .progress-card {
+    gap: 15px;
+  }
+  
+
+  .card {
+    width: 100vw;
+  }
+
+   .NoEnroll button {
+    width: 16vw;
+    margin-bottom: 10vw;
+  }
+
+  .Icon {
+    font-size: 12vw;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .dashboard-Container {
+   padding: 5vw 1vw;
+    margin: 0px;
+  }
+
+  .progress-card {
+    gap: 15px;
+  }
+  
+  .card {
+    width: 100vw;
+  }
+
+  .NoEnroll button {
+    width: 15vw;
+    margin-bottom: 10vw;
+  }
+
+  .Icon {
+    font-size: 12vw;
+  }
+}

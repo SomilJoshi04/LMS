@@ -1,0 +1,157 @@
+.dashboardSection {
+  overflow-x: hidden;
+  /* height: 100vmax; */
+}
+
+.dashboard-Container {
+  display: flex;
+  justify-content: center;
+  padding: 5vw 6vw;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #111827;
+  padding: 20px;
+}
+
+.dashboardbtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background: #232b3d;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #1f1f20;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.progressContainer {
+  background-color: #ffffff;
+  width: 90%;
+  padding: 24px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.progress-card {
+  margin: 20px 0px 24px;
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  width: 16%;
+  padding: 18px;
+  border-radius: 4px;
+  margin-bottom: 13px;
+}
+
+.card-div1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.progress-text {
+  display: flex;
+  margin: 0px 0px 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-text span {
+  color: #4d5563;
+  font-size: 16px;
+}
+
+.Overall-Progress {
+  width: 98%;
+  margin-bottom: 20px;
+}
+
+.progressBar {
+  height: 10px;
+  border-radius: 50px;
+  background-color: #e5e7eb;
+  overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  width: 0;
+  background-color: #968d9e;
+  transition: width 1.5s ease-in-out;
+  border-radius: 10px;
+}
+
+.CourseProgress h3 {
+  color: #111827;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.CourseProgressText {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #6b7280;
+}
+
+.courseNavbar {
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  border-bottom: 1px solid #9696ea;
+}
+
+.courseNavbar button {
+  all: unset;
+  border: 1px solid transparent;
+  color: #6b7280;
+  padding: 8px 4px;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 800;
+  position: relative;
+}
+
+.courseNavbar button:hover {
+  border-bottom: 1px solid #494848;
+}
+
+.courseNavbar button.active {
+  color: #4f46e5;
+}
+
+.courseNavbar button.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #5851e3;
+  border-radius: 0px;
+}

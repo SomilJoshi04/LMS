@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  height:auto;
+  width: 100vw;
+  margin: 0%;
+  /* background-image: url("../public/media/backgroundImg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  overflow-x: hidden;
+}
+
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+

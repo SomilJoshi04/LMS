@@ -1,0 +1,22 @@
+.quizContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.quizContainer h2{
+    margin-top: 2vw;
+}
+
+.quizInfo-Container{
+   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 50px;
+}
+
+.title{
+    color: #6b7280;
+}

@@ -1,0 +1,113 @@
+.Profileform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+  margin-top: 2vw;
+  color: #837172;
+  margin-bottom: 3vw;
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  border: 1px solid #837172;
+  border-radius: 10px;
+  padding: 1vw 2vw;
+  width: 29vw;
+}
+
+.profileform h6 {
+  font-size: 1vw;
+}
+
+.profileform input,
+textarea,
+select {
+  padding: 0.9vw;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.profileform button {
+  height: 3vw;
+}
+
+
+
+@media (max-width: 600px) {
+  .formContainer form {
+    margin-top: 2vw;
+    width: 70vw ;
+    padding: 2vw 5vw;
+    gap:3vw;
+  }
+
+  .profileform h6{
+    font-size: 3.5vw;
+  }
+
+ .profileform input,
+textarea,
+select{
+   padding: 2vw;
+  font-size: 2.5vw;
+}
+
+
+.profileform button {
+height: 40px;
+}
+
+}
+
+@media (min-width: 601px) and (max-width:980px){
+
+  .formContainer form {
+   padding: 2vw 2.5vw;
+    width: 45vw ;
+}
+
+ .profileform h6{
+    font-size: 2vw;
+  }
+
+ .profileform input,
+textarea,
+select{
+   padding: 1.8vw;
+  font-size: 1.6vw;
+}
+
+.profileform button {
+height: 40px;
+}
+}
+
+@media (min-width: 980px) and (max-width:1280px){
+
+  .formContainer form {
+   padding: 1.6vw 2vw;
+    width: 35vw ;
+}
+
+ .profileform h6{
+    font-size: 1.7vw;
+  }
+
+ .profileform input,
+textarea,
+select{
+   padding: 1vw;
+  font-size: 1.5vw;
+}
+
+.profileform button {
+height: 4vw;
+}
+}
