@@ -28,7 +28,7 @@ mongoose
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "https://lms-5-7p4k.onrender.com",
+    origin: "https://lms-qidz.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
