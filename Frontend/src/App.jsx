@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { handleError } from "./utils";
 import WatchCourses from "./StudentDashboards/WatchCourses";
-import LoginRemainder from "./Authentication/loginRemainder";
+import LoginRemainder from "./Authentication/LoginRemainder";
 import { ToastContainer } from "react-toastify";
 import QuizUI from "./StudentDashboards/QuizUI";
 import QuizScore from "./StudentDashboards/QuizScore";
