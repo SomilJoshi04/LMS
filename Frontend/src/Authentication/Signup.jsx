@@ -61,7 +61,7 @@ function Signup() {
     }
 
     try {
-      const url = "http://localhost:4000/auth/signup";
+      const url = "https://lms-5-7p4k.onrender.com/auth/signup";
       const response = await fetch(url, {
         method: "Post",
         headers: {

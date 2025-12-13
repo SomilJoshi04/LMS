@@ -17,7 +17,7 @@ function AdminDashboard({ userData }) {
     const fetchTeachers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/admin/allUsers"
+          "https://lms-5-7p4k.onrender.com/admin/allUsers"
         );
         if (response.data.success) {
           handleSuccess(response.data.message);

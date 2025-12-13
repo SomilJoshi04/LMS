@@ -20,7 +20,7 @@ function TeacherDashboard({ userData }) {
       try {
         setIsLoading(true);
         const response = await axios.get(
-          `http://localhost:4000/course/teacherCourses/${userId}`
+          `https://lms-5-7p4k.onrender.com/course/teacherCourses/${userId}`
         );
 
         if (response.data.success) {

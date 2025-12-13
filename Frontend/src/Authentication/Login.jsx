@@ -57,7 +57,7 @@ function Login({ setUserData, setIsAuthenticated }) {
       return handleError("Email, password and role are required");
     }
     try {
-      const url = "http://localhost:4000/auth/login";
+      const url = "https://lms-5-7p4k.onrender.com/auth/login";
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

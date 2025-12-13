@@ -53,7 +53,7 @@ function ProfileForm({ setUserData }) {
 
     try {
       const response = await axios.put(
-        `http://localhost:4000/profile/updateProfile/${userId}`,
+        `https://lms-5-7p4k.onrender.com/profile/updateProfile/${userId}`,
         updateData
       );
 

@@ -22,7 +22,7 @@ function AllCourseCard({
   const handleCoursedelete = async (courseId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/admin/deleteCourse/${courseId}`
+        `https://lms-5-7p4k.onrender.com/admin/deleteCourse/${courseId}`
       );
 
       if (response.data.success) {

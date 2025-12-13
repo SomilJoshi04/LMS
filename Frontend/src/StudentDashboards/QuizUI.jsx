@@ -20,7 +20,7 @@ function QuizUI() {
     const getQuiz = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/quiz/getQuiz/${quizId}`
+          `https://lms-5-7p4k.onrender.com/quiz/getQuiz/${quizId}`
         );
 
         if (response.data.success) {
@@ -81,7 +81,7 @@ function QuizUI() {
           totalmark += quiz.questions[i].mark;
         }
 
-       const studentData = { ...studentQuizSubmit, totalmark };
+        const studentData = { ...studentQuizSubmit, totalmark };
 
         navigate("/quiz/QuizScore", { state: studentData });
       } else {

@@ -38,7 +38,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/profile/getprofile/${userId}`
+          ` https://lms-5-7p4k.onrender.com/profile/getprofile/${userId}`
         );
 
         if (response.data.success) {

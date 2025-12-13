@@ -79,7 +79,7 @@ function AddCourse() {
       };
 
       const response = await axios.post(
-        "http://localhost:4000/course/addCourse",
+        "https://lms-5-7p4k.onrender.com/course/addCourse",
         payload
       );
 

@@ -31,7 +31,7 @@ function CourseCard({
   const handleEnroll = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/course/enrollCourses`,
+        `https://lms-5-7p4k.onrender.com/course/enrollCourses`,
         {
           userId,
           courseId,

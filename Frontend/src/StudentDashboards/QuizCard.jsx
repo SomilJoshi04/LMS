@@ -15,7 +15,7 @@ function QuizCard() {
     const fetchAllQuizzes = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/quiz/getAllQuizzes"
+          "https://lms-5-7p4k.onrender.com/quiz/getAllQuizzes"
         );
 
         if (response.data.success) {
@@ -37,7 +37,7 @@ function QuizCard() {
       const userId = localStorage.getItem("userId");
 
       const response = await axios.post(
-        "http://localhost:4000/quiz/checkQuizAccess",
+        "https://lms-5-7p4k.onrender.com/quiz/checkQuizAccess",
         {
           userId: userId,
           courseId: quiz.CourseId._id,

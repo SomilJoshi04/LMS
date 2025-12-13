@@ -34,7 +34,7 @@ function AllUsers({ allUsers, active, setAllUsers }) {
       // const userId = user;
       console.log(userId);
       const response = await axios.delete(
-        `http://localhost:4000/admin/delete/${userId}`
+        `https://lms-5-7p4k.onrender.com/admin/delete/${userId}`
       );
 
       if (response.data.success) {

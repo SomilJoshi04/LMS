@@ -26,8 +26,12 @@ function StudentMyCourse({
       try {
         setIsLoading(true);
         const [mycourses, availablecourses] = await Promise.all([
-          axios.get(`http://localhost:4000/course/myCourses/${userId}`),
-          axios.get(`http://localhost:4000/course/availableCourses/${userId}`),
+          axios.get(
+            `https://lms-5-7p4k.onrender.com/course/myCourses/${userId}`
+          ),
+          axios.get(
+            `https://lms-5-7p4k.onrender.com/course/availableCourses/${userId}`
+          ),
         ]);
 
         if (mycourses.data.success) {
@@ -143,16 +147,10 @@ function StudentMyCourse({
                 completed={course.completed}
                 enrollCount={course.enrollCount}
               />
-              
             </div>
-            
           ))}
 
-        
-
-       {active === "Quiz" && <QuizCard/>
-       }
-
+        {active === "Quiz" && <QuizCard />}
       </div>
     </>
   );

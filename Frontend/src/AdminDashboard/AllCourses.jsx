@@ -12,7 +12,7 @@ function AllCourses({ active }) {
     const fetchedAllCourses = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/admin/allCourses"
+          "https://lms-5-7p4k.onrender.com/admin/allCourses"
         );
 
         if (response.data.success) {

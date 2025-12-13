@@ -80,7 +80,7 @@ function AddQuizzes() {
       };
 
       const response = await axios.post(
-        "http://localhost:4000/quiz/addQuiz",
+        "https://lms-5-7p4k.onrender.com/quiz/addQuiz",
         payload
       );
 

@@ -69,7 +69,7 @@ function Profile({ userData }) {
     try {
       const userId = localStorage.getItem("userId");
       const response = await axios.delete(
-        `http://localhost:4000/auth/delete/${userId}`
+        `https://lms-5-7p4k.onrender.com/auth/delete/${userId}`
       );
 
       if (response.data.success) {
