@@ -83,6 +83,11 @@ function AddCourse() {
         payload
       );
 
+      //  const response = await axios.post(
+      //   "http://localhost:4000/course/addCourse",
+      //   payload
+      // );
+
       if (response.data.success) {
         handleSuccess(response.data.message);
         setFormData({

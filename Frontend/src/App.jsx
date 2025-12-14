@@ -41,6 +41,10 @@ function App() {
           ` https://lms-5-7p4k.onrender.com/profile/getprofile/${userId}`
         );
 
+        // const response = await axios.get(
+        //   ` http://localhost:4000/profile/getprofile/${userId}`
+        // );
+
         if (response.data.success) {
           setUserData(response.data.userData);
         } else {
@@ -58,7 +62,12 @@ function App() {
   return (
     <>
       {!hideLoginRemainder && <LoginRemainder />}
-      {!hideNavbar && <Navbar />}
+      {!hideNavbar && (
+        <Navbar
+          setUserData={setUserData}
+          setIsAuthenticated={setIsAuthenticated}
+        />
+      )}
 
       <Routes>
         <Route
@@ -127,7 +136,7 @@ function App() {
           }
         />
 
-        <Route
+        {/* <Route
           path="/progress"
           element={
             isAuthenticated ? (
@@ -136,7 +145,9 @@ function App() {
               <Navigate to="/login" />
             )
           }
-        />
+        /> */}
+
+        <Route path="/progress" element={<StudentProgressSection />} />
 
         <Route
           path="/watch/:courseId"

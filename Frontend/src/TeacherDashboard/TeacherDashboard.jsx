@@ -23,6 +23,10 @@ function TeacherDashboard({ userData }) {
           `https://lms-5-7p4k.onrender.com/course/teacherCourses/${userId}`
         );
 
+//  const response = await axios.get(
+//           `http://localhost:4000/course/teacherCourses/${userId}`
+//         );
+
         if (response.data.success) {
           return setCourses(response.data.teacherCourses);
         } else {

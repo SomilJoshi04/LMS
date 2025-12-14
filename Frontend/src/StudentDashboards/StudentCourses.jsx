@@ -33,6 +33,15 @@ function StudentMyCourse({
             `https://lms-5-7p4k.onrender.com/course/availableCourses/${userId}`
           ),
         ]);
+        
+        // const [mycourses, availablecourses] = await Promise.all([
+        //   axios.get(
+        //     `http://localhost:4000/course/myCourses/${userId}`
+        //   ),
+        //   axios.get(
+        //     `http://localhost:4000/course/availableCourses/${userId}`
+        //   ),
+        // ]);
 
         if (mycourses.data.success) {
           setMyCourses(mycourses.data.myCourses);

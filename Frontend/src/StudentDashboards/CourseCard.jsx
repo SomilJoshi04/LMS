@@ -37,6 +37,15 @@ function CourseCard({
           courseId,
         }
       );
+
+      //  const response = await axios.post(
+      //   `http://localhost:4000/course/enrollCourses`,
+      //   {
+      //     userId,
+      //     courseId,
+      //   }
+      // );
+      
       if (response.data.success) {
         setMyCourses(response.data.myCourses);
 

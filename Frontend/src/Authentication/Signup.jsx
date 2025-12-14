@@ -62,6 +62,9 @@ function Signup() {
 
     try {
       const url = "https://lms-5-7p4k.onrender.com/auth/signup";
+
+      // const url = "http://localhost:4000/auth/signup";
+
       const response = await fetch(url, {
         method: "Post",
         headers: {
@@ -94,10 +97,7 @@ function Signup() {
     <div className="Authentication">
       <div className="Container" style={{ marginBottom: "20px" }}>
         <div className="Signup-img">
-          <img
-            src="https://plus.unsplash.com/premium_vector-1683140971142-78df716a87c1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI3fHx8ZW58MHx8fHx8"
-            alt="SignupImage"
-          />
+          <img src="/media/signupImg.avif" alt="SignupImage" />
         </div>
         <div className="form-container">
           <h2>Signup Account</h2>

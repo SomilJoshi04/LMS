@@ -25,6 +25,10 @@ function AllCourseCard({
         `https://lms-5-7p4k.onrender.com/admin/deleteCourse/${courseId}`
       );
 
+      // const response = await axios.delete(
+      //   `http://localhost:4000/admin/deleteCourse/${courseId}`
+      // );
+
       if (response.data.success) {
         handleSuccess(response.data.message);
         setCourses((prevCourse) => prevCourse.filter((c) => c._id != courseId));

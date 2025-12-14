@@ -31,11 +31,15 @@ function AllUsers({ allUsers, active, setAllUsers }) {
 
   const handleDelete = async (userId) => {
     try {
-      // const userId = user;
-      console.log(userId);
+
       const response = await axios.delete(
         `https://lms-5-7p4k.onrender.com/admin/delete/${userId}`
       );
+
+      //       const response = await axios.delete(
+      //   `http://localhost:4000/admin/delete/${userId}`
+      // );
+
 
       if (response.data.success) {
         handleSuccess(response.data.message);

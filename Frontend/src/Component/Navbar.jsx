@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ setUserData, setIsAuthenticated }) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,6 +14,8 @@ export default function Navbar() {
     localStorage.removeItem("userId");
     localStorage.removeItem("token");
     toast.success("User Logout successfully!");
+    setUserData(null);
+    setIsAuthenticated(false);
     navigate("/login");
   };
 

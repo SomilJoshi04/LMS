@@ -57,6 +57,11 @@ function ProfileForm({ setUserData }) {
         updateData
       );
 
+      // const response = await axios.put(
+      //   `http://localhost:4000/profile/updateProfile/${userId}`,
+      //   updateData
+      // );
+
       if (response.data.success) {
         handleSuccess(response.data.message);
         setUserData(response.data.updatedUser);

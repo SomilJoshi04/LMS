@@ -19,6 +19,11 @@ function AdminDashboard({ userData }) {
         const response = await axios.get(
           "https://lms-5-7p4k.onrender.com/admin/allUsers"
         );
+
+        //  const response = await axios.get(
+        //   "http://localhost:4000/admin/allUsers"
+        // );
+
         if (response.data.success) {
           handleSuccess(response.data.message);
           setAllUsers(response.data.allUsers);

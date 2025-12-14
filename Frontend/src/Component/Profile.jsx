@@ -72,6 +72,11 @@ function Profile({ userData }) {
         `https://lms-5-7p4k.onrender.com/auth/delete/${userId}`
       );
 
+      //  const response = await axios.delete(
+      //   `http://localhost:4000/auth/delete/${userId}`
+      // );
+
+
       if (response.data.success) {
         handleSuccess(response.data.message);
         localStorage.clear();

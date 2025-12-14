@@ -17,7 +17,7 @@ function StudentDashboard({ userData }) {
     navigate("/Teacher");
   };
 
-  const handleadmin =  () => {
+  const handleadmin = () => {
     navigate("/admin");
   };
 
@@ -58,36 +58,38 @@ function StudentDashboard({ userData }) {
   return (
     <>
       <Video />
-      <div className="hero">
-        {userData?.role === "student" && (
-          <>
-            <h1>Welcome {userData?.username}</h1>
-            <p>Continue your learning journey and explore new courses.</p>
-            <button className="dashboardbtn" onClick={handleSubmit}>
-              See your Progress
-            </button>
-          </>
-        )}
+      <div className="heroContainer">
+        <div className="hero">
+          {userData?.role === "student" && (
+            <>
+              <h1>Welcome {userData?.username}</h1>
+              <p>Continue your learning journey and explore new courses.</p>
+              <button className="dashboardbtn" onClick={handleSubmit}>
+                See your Progress
+              </button>
+            </>
+          )}
 
-        {userData?.role === "teacher" && (
-          <>
-            <h1>Welcome {userData?.username}</h1>
-            <p>Access your teaching tools and course controls.</p>
-            <button className="dashboardbtn" onClick={handleteacher}>
-              Open Teacher Dashboard
-            </button>
-          </>
-        )}
+          {userData?.role === "teacher" && (
+            <>
+              <h1>Welcome {userData?.username}</h1>
+              <p>Access your teaching tools and course controls.</p>
+              <button className="dashboardbtn" onClick={handleteacher}>
+                Open Teacher Dashboard
+              </button>
+            </>
+          )}
 
-        {userData?.role === "admin" && (
-          <>
-            <h1>Welcome {userData?.username}</h1>
-            <p>You can manage all users, courses, and quizzes here.</p>
-            <button className="dashboardbtn" onClick={handleadmin}>
-              Open Admin Dashboard
-            </button>
-          </>
-        )}
+          {userData?.role === "admin" && (
+            <>
+              <h1>Welcome {userData?.username}</h1>
+              <p>You can manage all users, courses, and quizzes here.</p>
+              <button className="dashboardbtn" onClick={handleadmin}>
+                Open Admin Dashboard
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

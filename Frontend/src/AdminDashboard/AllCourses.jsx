@@ -15,6 +15,10 @@ function AllCourses({ active }) {
           "https://lms-5-7p4k.onrender.com/admin/allCourses"
         );
 
+        // const response = await axios.get(
+        //   "http://localhost:4000/admin/allCourses"
+        // );
+
         if (response.data.success) {
           handleSuccess(response.data.messaage);
           setIsLoading(false);

@@ -62,7 +62,6 @@ function WatchCourses() {
 
       setTimeWatched(currentTime);
 
-      //   const progress = (currentTime / duration) * 100;
 
       axios.post("https://lms-5-7p4k.onrender.com/course/updateProgress", {
         userId: localStorage.getItem("userId"),
@@ -72,35 +71,45 @@ function WatchCourses() {
       });
     }, 1000);
 
+    // axios.post("http://localhost:4000/course/updateProgress", {
+    //     userId: localStorage.getItem("userId"),
+    //     courseId,
+    //     timeWatched: currentTime,
+    //     totalDuration: duration,
+    //   });
+    // }, 1000);
+
     return () => clearInterval(interval);
   }, [player, duration]);
 
   return (
-    <div style={{ padding: "20px" }} className="youtube">
-      <h2>Start Learning</h2>
-      {/* 
-      {loading ? ( */}
-      {/* <div className="loader-wrapper">
-          <FadeLoader />
-        </div> */}
-      {/* ) : ( */}
-      <>
-        <YouTube
-          videoId={videoId}
-          opts={{
-            width: "800",
-            height: "450",
-            playerVars: { autoplay: 1 },
-          }}
-          onReady={onPlayerReady}
-        />
+    <div className="youtube-container">
+  <h2>Start Learning</h2>
 
-        <button onClick={goToDashboard} className="Ybutton">
-          See your Progress
-        </button>
-      </>
-      {/* )}  */}
-    </div>
+  <div className="youtube-wrapper">
+    <YouTube
+      videoId={videoId}
+      opts={{
+        width: "100%", 
+        height: "100%", 
+        playerVars: {
+          autoplay: 1,
+          modestbranding: 1,
+          rel: 0,
+          playsinline: 1,
+          fs: 1,      
+        },
+      }}
+      onReady={onPlayerReady}
+      iframeClassName="youtube-iframe"
+    />
+  </div>
+
+  <button onClick={goToDashboard} className="Ybutton">
+    See your Progress
+  </button>
+</div>
+
   );
 }
 

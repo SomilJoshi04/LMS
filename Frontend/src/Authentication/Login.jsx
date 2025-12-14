@@ -58,6 +58,7 @@ function Login({ setUserData, setIsAuthenticated }) {
     }
     try {
       const url = "https://lms-5-7p4k.onrender.com/auth/login";
+    // const url = "http://localhost:4000/auth/login";
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -78,7 +79,6 @@ function Login({ setUserData, setIsAuthenticated }) {
           setIsAuthenticated(true);
           navigate("/");
         }, 1000);
-        
       } else {
         handleError("Login failed");
       }
@@ -92,7 +92,7 @@ function Login({ setUserData, setIsAuthenticated }) {
       <div className="Container">
         <div className="login-img">
           <img
-            src="https://plus.unsplash.com/premium_vector-1682298733507-e1988018a5e1?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/media/loginImg.avif"
             alt="loginImage"
           />
         </div>
@@ -133,7 +133,7 @@ function Login({ setUserData, setIsAuthenticated }) {
                 <option value="">-- Select --</option>
                 <option value="student">Student</option>
                 <option value="teacher">Teacher</option>
-                 <option value="admin">admin</option>
+                <option value="admin">admin</option>
               </select>
             </div>
 

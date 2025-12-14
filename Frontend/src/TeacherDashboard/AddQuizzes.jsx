@@ -84,6 +84,11 @@ function AddQuizzes() {
         payload
       );
 
+      //  const response = await axios.post(
+      //   "http://localhost:4000/quiz/addQuiz",
+      //   payload
+      // );
+
       if (response.data.success) {
         handleSuccess(response.data.message);
 
