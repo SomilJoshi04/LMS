@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 function AddCourse() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,9 @@ function AddCourse() {
   const [modules, setModules] = useState([
     { title: "", content: "", videoUrl: "", duration: "" },
   ]);
+
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -90,6 +94,7 @@ function AddCourse() {
 
       if (response.data.success) {
         handleSuccess(response.data.message);
+        navigate("/Teacher")
         setFormData({
           title: "",
           description: "",

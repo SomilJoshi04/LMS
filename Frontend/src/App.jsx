@@ -136,7 +136,7 @@ function App() {
           }
         />
 
-        {/* <Route
+        <Route
           path="/progress"
           element={
             isAuthenticated ? (
@@ -145,9 +145,9 @@ function App() {
               <Navigate to="/login" />
             )
           }
-        /> */}
+        />
 
-        <Route path="/progress" element={<StudentProgressSection />} />
+        {/* <Route path="/progress" element={<StudentProgressSection />} /> */}
 
         <Route
           path="/watch/:courseId"
