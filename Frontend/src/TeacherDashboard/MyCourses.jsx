@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 function MyCourses({ courses, loading, setActive }) {
-  // console.log("Courses:", courses);
+
 
   useGSAP(() => {
     gsap.from(".box h3", {
@@ -22,8 +22,10 @@ function MyCourses({ courses, loading, setActive }) {
     <div className="box">
       {loading ? (
         <h3 className="heading">Loading Courses</h3>
-      ) : (
+      ) : courses.title ? (
         <h3 className="heading">Your Courses</h3>
+      ) : (
+        " "
       )}
 
       <div className="TeachercourseContainer">

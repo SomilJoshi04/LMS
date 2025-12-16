@@ -114,6 +114,10 @@
     margin: 0px;
   }
 
+    /* .courseDetails {
+    grid-template-columns: repeat(3, 1fr);
+  } */
+
   .progress-card {
     gap: 15px;
   }

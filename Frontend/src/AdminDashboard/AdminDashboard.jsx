@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddCourse from "../TeacherDashboard/AddCourse";
 import AllUsers from "./AllUsers";
+import "./Admin.css";
 
 import axios from "axios";
 import { handleError, handleSuccess } from "../utils";
@@ -8,10 +9,7 @@ import AllCourses from "./AllCourses";
 function AdminDashboard({ userData }) {
   const [active, setActive] = useState("availableCourses");
 
-
   const [allUsers, setAllUsers] = useState([]);
-
- 
 
   useEffect(() => {
     const fetchTeachers = async () => {
@@ -20,7 +18,7 @@ function AdminDashboard({ userData }) {
           "https://lms-5-7p4k.onrender.com/admin/allUsers"
         );
 
-        //  const response = await axios.get(
+        // const response = await axios.get(
         //   "http://localhost:4000/admin/allUsers"
         // );
 
@@ -40,11 +38,9 @@ function AdminDashboard({ userData }) {
 
   return (
     <div className="adminDashboard">
-      <h2 style={{ textAlign: "center", marginTop: "1.5vw" }}>
-        Welcome {userData?.username}
-      </h2>
+      <h2>Welcome {userData?.username}</h2>
 
-      <div className="courseNavbar">
+      <div className="adimincourseNavbar">
         <button
           className={`${active == "availableCourses" ? "active" : ""}`}
           onClick={() => setActive("availableCourses")}
@@ -74,9 +70,7 @@ function AdminDashboard({ userData }) {
         </button>
       </div>
 
-      {active === "availableCourses" && (
-        <AllCourses active={active} />
-      )}
+      {active === "availableCourses" && <AllCourses active={active} />}
       {active === "addcourse" && <AddCourse />}
       {active === "students" && (
         <AllUsers

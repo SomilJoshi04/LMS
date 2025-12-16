@@ -18,6 +18,10 @@ function QuizCard() {
           "https://lms-5-7p4k.onrender.com/quiz/getAllQuizzes"
         );
 
+        // const response = await axios.get(
+        //   "http://localhost:4000/quiz/getAllQuizzes"
+        // );
+
         if (response.data.success) {
           setQuizzes(response.data.quizzes);
           setIsLoading(false);
@@ -34,7 +38,7 @@ function QuizCard() {
 
   const handleTakeQuiz = async (quiz) => {
     try {
-      const userId = localStorage.getItem("userId");
+      const userId = sessionStorage.getItem("userId");
 
       const response = await axios.post(
         "https://lms-5-7p4k.onrender.com/quiz/checkQuizAccess",
@@ -43,6 +47,14 @@ function QuizCard() {
           courseId: quiz.CourseId._id,
         }
       );
+
+      // const response = await axios.post(
+      //   "http://localhost:4000/quiz/checkQuizAccess",
+      //   {
+      //     userId: userId,
+      //     courseId: quiz.CourseId._id,
+      //   }
+      // );
 
       if (response.data.success) {
         navigate(`/quiz/${quiz._id}`);

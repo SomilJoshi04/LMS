@@ -16,8 +16,7 @@ function StudentMyCourse({
   availableCourses,
   setAvailableCourses,
 }) {
-  const userId = localStorage.getItem("userId");
-  //  console.log(myCourses.courseId);
+  const userId = sessionStorage.getItem("userId");
 
   const [isloading, setIsLoading] = useState(true);
 
@@ -33,7 +32,7 @@ function StudentMyCourse({
             `https://lms-5-7p4k.onrender.com/course/availableCourses/${userId}`
           ),
         ]);
-        
+
         // const [mycourses, availablecourses] = await Promise.all([
         //   axios.get(
         //     `http://localhost:4000/course/myCourses/${userId}`

@@ -67,7 +67,7 @@ function Profile({ userData }) {
 
   const handleDelete = async () => {
     try {
-      const userId = localStorage.getItem("userId");
+      const userId = sessionStorage.getItem("userId");
       const response = await axios.delete(
         `https://lms-5-7p4k.onrender.com/auth/delete/${userId}`
       );
@@ -75,7 +75,6 @@ function Profile({ userData }) {
       //  const response = await axios.delete(
       //   `http://localhost:4000/auth/delete/${userId}`
       // );
-
 
       if (response.data.success) {
         handleSuccess(response.data.message);
@@ -114,8 +113,8 @@ function Profile({ userData }) {
         {settingbtn == true && (
           <div className="settingDropdown">
             <button onClick={handlebtnUpdate}>Update Profile Info</button>
-            {/* <button>Change Password</button>
-            <button>Change Profile Picture</button> */}
+  
+
             <button className="danger" onClick={handleDelete}>
               Delete Account
             </button>
@@ -155,15 +154,7 @@ function Profile({ userData }) {
                 {userData?.Dob || "DOB not added"}
               </li>
 
-              {/* <li>
-                <b>Experience:</b>
-                {userData?.Experience || "Experience not added"}
-              </li>
-
-              <li>
-                <b>skills:</b>
-                {userData?.skills || "skills not added"}
-              </li> */}
+             
             </ul>
           </div>
         </div>

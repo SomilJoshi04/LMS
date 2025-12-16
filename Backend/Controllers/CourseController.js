@@ -256,7 +256,10 @@ const getTeacherCourses = async (req, res) => {
             {
               $match: {
                 $expr: {
-                  $in: ["$$courseId", "$enrolledCourses.courseId"],
+                  $in: [
+                    "$$courseId",
+                    { $ifNull: ["$enrolledCourses.courseId", []] },
+                  ],
                 },
               },
             },
@@ -350,8 +353,6 @@ const updateProgress = async (req, res) => {
   res.json({ success: true, course });
 };
 
-
-
 module.exports = {
   enrollCourses,
   getMyCourses,
@@ -359,5 +360,4 @@ module.exports = {
   addCourse,
   getTeacherCourses,
   updateProgress,
-
 };

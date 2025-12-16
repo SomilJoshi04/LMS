@@ -58,7 +58,9 @@ function Login({ setUserData, setIsAuthenticated }) {
     }
     try {
       const url = "https://lms-5-7p4k.onrender.com/auth/login";
-    // const url = "http://localhost:4000/auth/login";
+      
+      // const url = "http://localhost:4000/auth/login";
+
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -70,8 +72,9 @@ function Login({ setUserData, setIsAuthenticated }) {
 
       if (success) {
         handleSuccess(message);
-        localStorage.setItem("token", jwtToken);
-        localStorage.setItem("userId", user._id);
+
+        sessionStorage.setItem("token", jwtToken);
+        sessionStorage.setItem("userId", user._id);
 
         setUserData(user);
 
@@ -91,10 +94,7 @@ function Login({ setUserData, setIsAuthenticated }) {
     <div className="Authentication">
       <div className="Container">
         <div className="login-img">
-          <img
-            src="/media/loginImg.avif"
-            alt="loginImage"
-          />
+          <img src="/media/loginImg.avif" alt="loginImage" />
         </div>
         <div className="form-container">
           <h2>Login Account</h2>

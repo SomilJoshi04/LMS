@@ -10,12 +10,15 @@ export default function Navbar({ setUserData, setIsAuthenticated }) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
+
   const handleLogout = () => {
-    localStorage.removeItem("userId");
-    localStorage.removeItem("token");
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("token");
+
     toast.success("User Logout successfully!");
     setUserData(null);
     setIsAuthenticated(false);
+
     navigate("/login");
   };
 

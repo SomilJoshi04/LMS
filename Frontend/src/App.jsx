@@ -32,7 +32,7 @@ function App() {
   const hideLoginRemainder =
     location.pathname === "/login" || location.pathname === "/signup";
 
-  const userId = localStorage.getItem("userId");
+  const userId = sessionStorage.getItem("userId");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -147,7 +147,7 @@ function App() {
           }
         />
 
-        {/* <Route path="/progress" element={<StudentProgressSection />} /> */}
+       
 
         <Route
           path="/watch/:courseId"

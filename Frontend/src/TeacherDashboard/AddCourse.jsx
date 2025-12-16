@@ -8,9 +8,9 @@ import { useGSAP } from "@gsap/react";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 
-function AddCourse() {
+
+function AddCourse({ setActive }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -22,8 +22,6 @@ function AddCourse() {
     { title: "", content: "", videoUrl: "", duration: "" },
   ]);
 
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -74,7 +72,7 @@ function AddCourse() {
 
     try {
       // Get teacher/user object from localStorage
-      const userId = localStorage.getItem("userId");
+          const userId = sessionStorage.getItem("userId");
 
       const payload = {
         ...formData,
@@ -87,14 +85,15 @@ function AddCourse() {
         payload
       );
 
-      //  const response = await axios.post(
+      // const response = await axios.post(
       //   "http://localhost:4000/course/addCourse",
       //   payload
       // );
 
       if (response.data.success) {
         handleSuccess(response.data.message);
-        navigate("/Teacher")
+       
+        setActive("mycourses");
         setFormData({
           title: "",
           description: "",
@@ -192,7 +191,6 @@ function AddCourse() {
                 Remove Module
               </button>
             )}
-            
           </div>
         ))}
 

@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const signup = async (req, res) => {
   try {
+
     const { email, username, password, role, phone } = req.body;
     const existingUser = await User.findOne({ email });
 

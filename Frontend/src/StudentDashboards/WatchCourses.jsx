@@ -17,7 +17,6 @@ function extractVideoId(url) {
 
 function WatchCourses() {
   const navigate = useNavigate();
-  // const [loading, setIsLoading] = useState(true);
 
   const { courseId } = useParams();
   const { state } = useLocation();
@@ -47,8 +46,6 @@ function WatchCourses() {
     setTimeout(() => {
       const total = youtubePlayer.getDuration();
       setDuration(total);
-
-      // if (total > 0) setIsLoading(false);
     }, 300);
   };
 
@@ -62,9 +59,8 @@ function WatchCourses() {
 
       setTimeWatched(currentTime);
 
-
       axios.post("https://lms-5-7p4k.onrender.com/course/updateProgress", {
-        userId: localStorage.getItem("userId"),
+        userId: sessionStorage.getItem("userId"),
         courseId,
         timeWatched: currentTime,
         totalDuration: duration,
@@ -72,7 +68,7 @@ function WatchCourses() {
     }, 1000);
 
     // axios.post("http://localhost:4000/course/updateProgress", {
-    //     userId: localStorage.getItem("userId"),
+    //     userId: sessionStorage.getItem("userId"),
     //     courseId,
     //     timeWatched: currentTime,
     //     totalDuration: duration,
@@ -84,32 +80,31 @@ function WatchCourses() {
 
   return (
     <div className="youtube-container">
-  <h2>Start Learning</h2>
+      <h2>Start Learning</h2>
 
-  <div className="youtube-wrapper">
-    <YouTube
-      videoId={videoId}
-      opts={{
-        width: "100%", 
-        height: "100%", 
-        playerVars: {
-          autoplay: 1,
-          modestbranding: 1,
-          rel: 0,
-          playsinline: 1,
-          fs: 1,      
-        },
-      }}
-      onReady={onPlayerReady}
-      iframeClassName="youtube-iframe"
-    />
-  </div>
+      <div className="youtube-wrapper">
+        <YouTube
+          videoId={videoId}
+          opts={{
+            width: "100%",
+            height: "100%",
+            playerVars: {
+              autoplay: 1,
+              modestbranding: 1,
+              rel: 0,
+              playsinline: 1,
+              fs: 1,
+            },
+          }}
+          onReady={onPlayerReady}
+          iframeClassName="youtube-iframe"
+        />
+      </div>
 
-  <button onClick={goToDashboard} className="Ybutton">
-    See your Progress
-  </button>
-</div>
-
+      <button onClick={goToDashboard} className="Ybutton">
+        See your Progress
+      </button>
+    </div>
   );
 }
 

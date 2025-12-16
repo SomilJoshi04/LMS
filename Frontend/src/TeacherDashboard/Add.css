@@ -46,7 +46,7 @@
   flex-direction: column;
   padding: 15px;
   border-radius: 12px;
-  gap:12px;
+  gap: 12px;
   background: #f9fafb;
   border: 1px solid #e4e4e4;
   margin-bottom: 10px;
@@ -82,11 +82,8 @@ button[type="submit"]:hover {
   background: #3867d6;
 }
 
-
-@media (max-width:600px) {
-
-  #h2{
-    font-size: 6vw;
+@media (max-width: 600px) {
+  #h2 {
+    font-size: 5.6vw;
   }
-  
 }

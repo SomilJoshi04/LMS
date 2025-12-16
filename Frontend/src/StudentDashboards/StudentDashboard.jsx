@@ -21,23 +21,6 @@ function StudentDashboard({ userData }) {
     navigate("/admin");
   };
 
-  // const handlelogin = async () => {
-  //   navigate("/login");
-  // };
-
-  // if (!userData?._id) {
-  //   return (
-  //     <>
-  //       <Video />
-  //       <div className="hero">
-  //         <h1>Please login to use this feature</h1>
-  //         <button className="dashboardbtn" onClick={handlelogin}>
-  //           Login
-  //         </button>
-  //       </div>
-  //     </>
-  //   );
-  // }
 
   useGSAP(
     () => {

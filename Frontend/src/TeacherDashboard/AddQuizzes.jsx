@@ -9,9 +9,7 @@ import { useGSAP } from "@gsap/react";
 import "./Add.css";
 import { handleError, handleSuccess } from "../utils";
 
-function AddQuizzes() {
-  // console.log(courseId);
-
+function AddQuizzes({ setActive }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -43,7 +41,7 @@ function AddQuizzes() {
     } else if (e.target.name === "correctAnswer") {
       updatedQuestions[index].correctAnswer = e.target.value;
     } else if (e.target.name === "mark") {
-      updatedQuestions[index].mark = e.target.value; 
+      updatedQuestions[index].mark = e.target.value;
     }
     setQuestions(updatedQuestions);
   };
@@ -69,8 +67,8 @@ function AddQuizzes() {
     e.preventDefault();
 
     try {
-      const userId = localStorage.getItem("userId");
-      const courseId = localStorage.getItem("courseId");
+      const userId = sessionStorage.getItem("userId");
+      const courseId = sessionStorage.getItem("courseId");
 
       const payload = {
         ...formData,
@@ -84,16 +82,15 @@ function AddQuizzes() {
         payload
       );
 
-      //  const response = await axios.post(
+      // const response = await axios.post(
       //   "http://localhost:4000/quiz/addQuiz",
       //   payload
       // );
 
       if (response.data.success) {
         handleSuccess(response.data.message);
-
+        setActive("mycourses");
         localStorage.removeItem("courseId");
-        // localStorage.removeItem("courseTitle");
 
         setFormData({ title: "", description: "", timeLimit: "" });
 

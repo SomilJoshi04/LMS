@@ -36,7 +36,7 @@ function ProfileForm({ setUserData }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userId = localStorage.getItem("userId");
+    const userId = sessionStorage.getItem("userId");
 
     const updateData = {
       imgLink: profile.imgLink,

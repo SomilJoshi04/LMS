@@ -61,9 +61,9 @@ function QuizUI() {
 
   const handleQuizSubmit = async () => {
     try {
-      const userId = localStorage.getItem("userId");
+      const userId = sessionStorage.getItem("userId");
       const response = await axios.post(
-        "http://localhost:4000/quiz/QuizSubmit",
+        "https://lms-5-7p4k.onrender.com/quiz/QuizSubmit",
         {
           studentId: userId,
           quizId,

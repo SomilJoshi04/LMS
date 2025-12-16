@@ -16,10 +16,14 @@ const userSchema = new mongoose.Schema({
   },
 
   imgLink: { type: String, default: "" },
-  role: { type: String, enum: ["student", "teacher","admin"], required: true },
-  phone: { type: String, required: true },
+  role: { type: String, enum: ["student", "teacher", "admin"], required: true },
+  phone: {
+    type: String,
+    required: true,
+    match: [/^\d{10}$/, "Phone number must be 10 digits"],
+  },
   location: { type: String },
-  gender: { type: String},
+  gender: { type: String },
   Dob: { type: String },
 
   Qualification: {

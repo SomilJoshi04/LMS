@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { handleError, handleSuccess } from "../utils";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -48,16 +48,29 @@ function Signup() {
   });
   const handleOnchange = (e) => {
     const { name, value } = e.target;
-    setSignupInfo({ ...signupInfo, [name]: value });
+    if (name === "phone") {
+      if (/^\d*$/.test(value)) {
+        setSignupInfo({ ...signupInfo, [name]: value });
+      }
+    } else {
+      setSignupInfo({ ...signupInfo, [name]: value });
+    }
   };
 
   const handleSignup = async (e) => {
     e.preventDefault();
+
     const { email, username, password, role, phone } = signupInfo;
+
     if (!username || !email || !password || !role || !phone) {
       return handleError(
         "username,email,password,role and phoneNo. are required"
       );
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      toast.error("Phone number must be exactly 10 digits");
+      return;
     }
 
     try {
@@ -142,6 +155,7 @@ function Signup() {
                 type="text"
                 name="phone"
                 placeholder="Enter your Phone No."
+                maxLength={10}
                 value={signupInfo.phone}
                 onChange={handleOnchange}
               />

@@ -14,7 +14,7 @@ function TeacherDashboard({ userData }) {
   const [courses, setCourses] = useState([]);
   const [loading, setIsLoading] = useState(true);
 
-  const userId = localStorage.getItem("userId");
+  const userId = sessionStorage.getItem("userId");
   useEffect(() => {
     const teacherCourses = async () => {
       try {
@@ -23,9 +23,9 @@ function TeacherDashboard({ userData }) {
           `https://lms-5-7p4k.onrender.com/course/teacherCourses/${userId}`
         );
 
-//  const response = await axios.get(
-//           `http://localhost:4000/course/teacherCourses/${userId}`
-//         );
+        // const response = await axios.get(
+        //   `http://localhost:4000/course/teacherCourses/${userId}`
+        // );
 
         if (response.data.success) {
           return setCourses(response.data.teacherCourses);
@@ -95,17 +95,12 @@ function TeacherDashboard({ userData }) {
       </div>
 
       {active === "mycourses" && (
-        <MyCourses
-          courses={courses}
-          loading={loading}
-       
-          setActive={setActive}
-        />
+        <MyCourses courses={courses} loading={loading} setActive={setActive} />
       )}
-      {active === "addcourse" && <AddCourse />}
+      {active === "addcourse" && <AddCourse setActive={setActive} />}
       {active === "students" && <Students courses={courses} />}
 
-      {active === "addQuiz" && <AddQuizzes />}
+      {active === "addQuiz" && <AddQuizzes setActive={setActive} />}
     </div>
   );
 }

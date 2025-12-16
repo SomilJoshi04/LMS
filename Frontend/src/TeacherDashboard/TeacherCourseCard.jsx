@@ -15,8 +15,8 @@ function TeacherCourseCard({
   courseId,
 }) {
   const hanldeQuiz = () => {
-    localStorage.setItem("courseId", courseId);
-    localStorage.setItem("courseTitle", title);
+    sessionStorage.setItem("courseId", courseId);
+    sessionStorage.setItem("courseTitle", title);
     setActive("addQuiz");
   };
 
@@ -36,7 +36,7 @@ function TeacherCourseCard({
   );
 
   return (
-    <div ref={cardRef} className="cardContainer" >
+    <div ref={cardRef} className="cardContainer">
       <div className="cardimg ">
         <img src={thumbnail || "./media/cardimg1.jpg"} alt="hackcard" />
       </div>

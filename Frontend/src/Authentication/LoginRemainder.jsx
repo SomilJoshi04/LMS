@@ -11,7 +11,7 @@ function LoginRemainder() {
 
   useEffect(() => {
     const checkLogin = () => {
-      const token = localStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
       if (!token && !showRemainder) {
         setShowRemainder(true);
         toast.info(
