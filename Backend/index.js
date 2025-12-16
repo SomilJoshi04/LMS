@@ -28,8 +28,8 @@ mongoose
 app.use(bodyParser.json());
 app.use(
   cors({
-    // origin: "https://lms-qidz.vercel.app",
-    origin: "http://localhost:5173",
+    origin: "https://lms-qidz.vercel.app",
+    // origin: "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
