@@ -80,8 +80,8 @@ function QuizCard() {
           {quizzes?.map((q) => (
             <div className="cardContainer" key={q._id}>
               <div className="cardData-Container">
-                <h3 className="title">Course: {q.CourseId.title}</h3>
-                <h4 className="title">{q.title}</h4>
+                  <h3 className="title">Course: {q.CourseId?.title ||  "No Course Title"}</h3>
+                <h4 className="title">{q.title || "No Quiz Title"}</h4>
                 <button
                   className="courseCardbtn"
                   onClick={() => handleTakeQuiz(q)}
