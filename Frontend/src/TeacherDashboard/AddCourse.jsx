@@ -8,9 +8,11 @@ import { useGSAP } from "@gsap/react";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 
 function AddCourse({ setActive }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -85,15 +87,11 @@ function AddCourse({ setActive }) {
         payload
       );
 
-      // const response = await axios.post(
-      //   "http://localhost:4000/course/addCourse",
-      //   payload
-      // );
 
       if (response.data.success) {
         handleSuccess(response.data.message);
        
-        setActive("mycourses");
+        navigate("/");
         setFormData({
           title: "",
           description: "",
