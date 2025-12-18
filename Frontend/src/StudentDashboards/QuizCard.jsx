@@ -18,9 +18,7 @@ function QuizCard() {
           "https://lms-5-7p4k.onrender.com/quiz/getAllQuizzes"
         );
 
-        // const response = await axios.get(
-        //   "http://localhost:4000/quiz/getAllQuizzes"
-        // );
+        
 
         if (response.data.success) {
           setQuizzes(response.data.quizzes);
@@ -48,13 +46,7 @@ function QuizCard() {
         }
       );
 
-      // const response = await axios.post(
-      //   "http://localhost:4000/quiz/checkQuizAccess",
-      //   {
-      //     userId: userId,
-      //     courseId: quiz.CourseId._id,
-      //   }
-      // );
+    
 
       if (response.data.success) {
         navigate(`/quiz/${quiz._id}`);
@@ -69,7 +61,11 @@ function QuizCard() {
 
   return (
     <div className="quizContainer">
-      <h2>Available Quizzes</h2>
+      {quizzes.length > 0 ? (
+        <h2>Available Quizzes</h2>
+      ) : (
+        <h2>No Quizzes Available yet</h2>
+      )}
 
       {loading ? (
         <div className="loader-wrapper">
@@ -100,25 +96,5 @@ function QuizCard() {
 
 export default QuizCard;
 
-{
-  /* <p className="cardtext">description</p> */
-}
-{
-  /* <div className="Teachername">
-          <span>By teacher</span>
-          <span>duration</span>
-        </div> */
-}
 
-{
-  /* <div className="cardPrice">
-          <span className="priceSpan1">
-            <i className="fa-solid fa-indian-rupee-sign"></i>
-            price
-          </span>
-          <span priceSpan2>
-            <i className="fa-solid fa-circle-user"></i>
-            enrollCount
-          </span>
-        </div> */
-}
+
