@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 
-function AddCourse({ setActive }) {
+function AddCourse() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
