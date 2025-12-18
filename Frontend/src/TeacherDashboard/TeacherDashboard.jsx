@@ -23,10 +23,7 @@ function TeacherDashboard({ userData }) {
           `https://lms-5-7p4k.onrender.com/course/teacherCourses/${userId}`
         );
 
-        // const response = await axios.get(
-        //   `http://localhost:4000/course/teacherCourses/${userId}`
-        // );
-
+       
         if (response.data.success) {
           return setCourses(response.data.teacherCourses);
         } else {
@@ -79,12 +76,7 @@ function TeacherDashboard({ userData }) {
           Add New Course
         </button>
 
-        {/* <button
-          className={`${active == "addQuiz" ? "active" : ""}`}
-          onClick={() => setActive("addQuiz")}
-        >
-          Add Quiz
-        </button> */}
+      
 
         <button
           className={`${active == "students" ? "active" : ""}`}
@@ -97,7 +89,7 @@ function TeacherDashboard({ userData }) {
       {active === "mycourses" && (
         <MyCourses courses={courses} loading={loading} setActive={setActive} />
       )}
-      {active === "addcourse" && <AddCourse setActive={setActive} />}
+      {active === "addcourse" && <AddCourse/>}
       {active === "students" && <Students courses={courses} />}
 
       {active === "addQuiz" && <AddQuizzes setActive={setActive} />}
